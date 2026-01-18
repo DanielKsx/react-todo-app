@@ -5,16 +5,17 @@ import shortid from 'shortid';
 const reducer = (state, action) => {
     switch(action.type) {
         case 'ADD_COLUMN':
-            return { ...state, columns: [...state.columns, { ...action.payload, id: shortid() },
-            ],
+            return { ...state, columns: [...state.columns, { ...action.payload, id: shortid() }],
         };
         case 'ADD_CARD':
-            return { ...state, cards: [...state.cards, { ...action.payload, id: shortid() },
-        ],
+            return { ...state, cards: [...state.cards, { ...action.payload, id: shortid() }],
     };
+        case 'SET_SEARCH_TEXT':
+            return {...state, searchText: action.payload
+            };
             default:
                 return state;
-}
+    }
 };
 
 

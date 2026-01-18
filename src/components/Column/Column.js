@@ -5,7 +5,17 @@ import { useSelector } from 'react-redux';
 
 const Column = props => {
 
-    const cards = useSelector(state => state.cards.filter(card => card.columnId === props.id));
+    const searchText = useSelector(state => state.searchText);
+    const cards = useSelector(state => state.cards.filter(card => {
+        const matchesColumn = card.columnId === props.id;
+
+        const query = (searchText || '').trim().toLowerCase();
+        if(!query) return matchesColumn;
+
+        const matchesSearch = card.title.toLowerCase().includes(query);
+        return matchesColumn && matchesSearch;
+    })
+);
     
     return (<article className={styles.column}>
         <h2 className={styles.title}>
