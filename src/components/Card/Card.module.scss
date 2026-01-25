@@ -11,3 +11,24 @@
     justify-content: space-between;
     font-weight: bold;
 }
+
+.favoriteButton {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: lighten($color-dark, 45%);
+    transition: color 0.2s ease, transform 0.15s ease;
+}
+
+.favoriteButton:hover {
+  color: #f5b301;
+  transform: scale(1.15);
+}
+
+.isFavorite {
+  color: #f5b301;
+}
+
+.favoriteButton:active {
+  transform: scale(0.95);
+}
