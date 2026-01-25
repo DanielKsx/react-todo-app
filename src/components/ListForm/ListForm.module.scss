@@ -1,0 +1,46 @@
+@import '../../styles/settings.scss';
+
+.listForm {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 10px;
+    flex-wrap: wrap;
+    font-size: 18px;
+}
+
+.label {
+    margin-right: 6px;
+    white-space: nowrap;
+}
+
+.input {
+    height: 50px;
+    padding: 0 12px;
+    font-size: 18px;
+    min-width: 240px;
+    border-radius: $radius;
+    margin-left: 6px;
+}
+
+.listForm button {
+    margin: 0;
+}
+
+
+@media (max-width: 600px) {
+    .listForm {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .input {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .listForm button {
+        width: 100%;
+    }
+}
