@@ -8,16 +8,21 @@
     margin: 0 0 $base-size 0;
     border-radius: $radius;
     display: flex;
-    justify-content: space-between;
+    align-items: center;
     font-weight: bold;
+    gap: 8px;
 }
 
-.favoriteButton {
+.favoriteButton, .removeButton {
     background: transparent;
     border: none;
     cursor: pointer;
-    color: lighten($color-dark, 45%);
+    color: lighten($color-dark, 20%);
     transition: color 0.2s ease, transform 0.15s ease;
+}
+
+.favoriteButton {
+    margin-left: auto;
 }
 
 .favoriteButton:hover {
@@ -32,3 +37,11 @@
 .favoriteButton:active {
   transform: scale(0.95);
 }
+
+.removeButton:hover {
+  color: #252525;
+  transform: scale(1.15);
+}
+
+
+
